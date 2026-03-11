@@ -73,3 +73,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/Inventory and Shop System/Assets
+/Inventory and Shop System/Library
+/Inventory and Shop System/Temp
+/Inventory and Shop System/ProjectSettings
+/Inventory and Shop System/UserSettings
+/Inventory and Shop System/Packages
+Inventory and Shop System/.collabignore
+Inventory and Shop System/.vsconfig
