@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class GridSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public ItemDataBase dataBase;
+    public Transform gridParent;
+    public GameObject itemSlotPrefab;
+
     void Start()
     {
-        
+        foreach(ItemData item in dataBase.GetItems())
+        {
+            CreateItem(item);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void CreateItem(ItemData data)
     {
-        
+        GameObject slot = Instantiate(itemSlotPrefab, gridParent);
+
+        InventoryItemModel itemModel = new InventoryItemModel();
+        itemModel.data = data;
+        itemModel.quantity = 1;
+
+        ItemSlotView slotView = slot.GetComponent<ItemSlotView>();
+        slotView.SetUp(itemModel);
     }
 }
