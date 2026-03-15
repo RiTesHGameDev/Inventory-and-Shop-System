@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GridSpawner : MonoBehaviour
+public class ItemSpawner : MonoBehaviour
 {
     public ItemDataBase dataBase;
     public Transform gridParent;
@@ -19,7 +17,7 @@ public class GridSpawner : MonoBehaviour
     {
         GameObject slot = Instantiate(itemSlotPrefab, gridParent);
 
-        InventoryItemModel itemModel = new InventoryItemModel();
+        InventoryItemModel itemModel = new InventoryItemModel(data, 1);
         itemModel.data = data;
         itemModel.quantity = 1;
 

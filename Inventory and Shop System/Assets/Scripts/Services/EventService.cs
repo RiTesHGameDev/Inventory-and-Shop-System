@@ -22,5 +22,6 @@ public class EventService
         OnInventoryChanged = new EventController();
         OnCurrencyChanged = new EventController<int>();
         OnItemSelection = new EventController<ItemData>();
+        OnCloseButtonClick = new EventController();
     }
 }

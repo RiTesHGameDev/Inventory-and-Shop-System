@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a1600692fbef054e8be36866783686a, type: 3}
-  m_Name: Skull
+  m_Name: ScrollMap
   m_EditorClassIdentifier: 
-  itemName: Skull
-  icon: {fileID: 21300000, guid: 1c728f7cc6548f24cadceb6478fa25cc, type: 3}
-  description: Magical Power Ability
+  itemName: Scroll Map
+  icon: {fileID: 21300000, guid: 0a4e4ed28cc111a418bd671fe19adab0, type: 3}
+  description: Map For Destination
   type: 3
-  rarity: 2
+  rarity: 1
   buyPrice: 150
   sellPrice: 200
-  weight: 100
+  weight: 10
