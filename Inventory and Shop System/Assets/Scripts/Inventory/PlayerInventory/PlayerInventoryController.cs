@@ -31,7 +31,7 @@ public class PlayerInventoryController
         }
         else
         {
-            playerInventoryModel.playerItems.Add(new InventoryItemModel(item, quantity));
+            playerInventoryModel.playerItems.Add(new InventoryItemModel(item, quantity, ItemSource.PlayerInventory));
         }
 
         playerInventoryModel.currentWeight += item.weight * quantity;
@@ -51,6 +51,12 @@ public class PlayerInventoryController
             playerInventoryModel.playerItems.Remove(existing);
 
         playerInventoryModel.currentWeight -= item.weight * quantity;
+        playerInventoryView.RefreshInventory();
+    }
+
+    public void IncreaseCapacity(float amount)
+    {
+        playerInventoryModel.maxWeight += amount;
         playerInventoryView.RefreshInventory();
     }
     public float GetCurrentWeight()

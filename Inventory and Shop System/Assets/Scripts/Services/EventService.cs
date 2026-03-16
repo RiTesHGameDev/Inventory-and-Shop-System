@@ -15,13 +15,13 @@ public class EventService
 
     public EventController OnInventoryChanged;
     public EventController<int> OnCurrencyChanged;
-    public EventController<ItemData> OnItemSelection;
+    public EventController<InventoryItemModel> OnItemSelection;
     public EventController OnCloseButtonClick;
     public EventService()
     {
         OnInventoryChanged = new EventController();
         OnCurrencyChanged = new EventController<int>();
-        OnItemSelection = new EventController<ItemData>();
+        OnItemSelection = new EventController<InventoryItemModel>();
         OnCloseButtonClick = new EventController();
     }
 }

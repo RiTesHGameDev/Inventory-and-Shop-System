@@ -11,8 +11,11 @@ public class GameBootstrap : MonoBehaviour
 
     private GameService gameService;
 
+    public GatherResource gatherResource;
+
     void Awake()
     {
         gameService = new GameService(inventoryView, shopView, itemDatabase);
+        gatherResource.Initialize(gameService.currencyService, gameService.playerInventoryService.GetController());
     }
 }

@@ -16,7 +16,7 @@ public class ShopController
 
         foreach (var item in database.items)
         {
-           shopModel.shopItems.Add(new InventoryItemModel(item, 1));
+           shopModel.shopItems.Add(new InventoryItemModel(item, 1,ItemSource.Shop));
         }
 
         shopView.RefreshShop();

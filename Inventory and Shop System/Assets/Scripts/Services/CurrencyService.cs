@@ -1,6 +1,6 @@
 public class CurrencyService
 {
-    private int currency = 500;
+    private int currency = 0;
 
     public int GetCurrency()
     {

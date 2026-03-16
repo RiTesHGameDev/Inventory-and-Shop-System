@@ -2,14 +2,12 @@ using System.Collections.Generic;
 
 public class PlayerInventoryModel
 {
-    public float maxWeight;
-    public float currentWeight;
+    public float maxWeight = 0f;
+    public float currentWeight = 0f;
 
     public List<InventoryItemModel> playerItems;
     public PlayerInventoryModel() 
     {
-        maxWeight = 2000f;
-        currentWeight = 0f;
         playerItems = new List<InventoryItemModel>();
     }
     public List<InventoryItemModel> getPlayerItemList()

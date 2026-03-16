@@ -6,7 +6,7 @@ public class ItemSlotView : MonoBehaviour
     public Image icon;
     public TMPro.TextMeshProUGUI quantityText;
 
-    private ItemData itemData;
+    private InventoryItemModel item;
     private Button itemButton;
     private void Awake()
     {
@@ -15,14 +15,14 @@ public class ItemSlotView : MonoBehaviour
     }
     public void SetUp(InventoryItemModel item)
     {
-        itemData = item.data;
+        this.item = item;
 
         icon.sprite = item.data.icon;
         quantityText.text = item.quantity.ToString();
     }
     private void OnItemSelection()
     {
-        Debug.Log("Item Clicked: " + itemData.itemName);
-        EventService.Instance.OnItemSelection.InvokeEvent(itemData);
+        Debug.Log("Item Clicked: " + item.data);
+        EventService.Instance.OnItemSelection.InvokeEvent(item);
     }
 }

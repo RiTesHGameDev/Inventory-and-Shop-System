@@ -16,44 +16,50 @@ public class ItemDescriptionView : MonoBehaviour
     public Button buyButton;
     public Button sellButton;
 
-    private ItemData currentItem;
+    private InventoryItemModel currentItem;
     private ShopController shopController;
     private void Awake()
     {
         descriptionPanel.SetActive(false);
         EventService.Instance.OnItemSelection.AddListener(Show);
     }
-    private void OnDestroy()
-    {
-        EventService.Instance.OnItemSelection.RemoveListener(Show);
-    }
-
     private void Start()
     {
-        closeButton.onClick.AddListener(OnCloseButtonClick);
         buyButton.onClick.AddListener(OnBuyButtonClick);
         sellButton.onClick.AddListener(OnSellButtonClick);
+        closeButton.onClick.AddListener(OnCloseButtonClick);
     }
 
-    public void Initialize(ShopController controller)
+    public void Initialize(ShopController _shopController)
     {
-        shopController = controller;
+        shopController = _shopController;
     }
-    private void Show(ItemData item)
+    private void Show(InventoryItemModel item)
     {
         currentItem = item;
 
         descriptionPanel.SetActive(true);
 
-        icon.sprite = item.icon;
-        nameText.text = "Name : " + item.itemName;
-        infoText.text = "Info : " + item.description;
+        icon.sprite = item.data.icon;
+        nameText.text = "Name : " + item.data.itemName;
+        infoText.text = "Info : " + item.data.description;
 
-        buyPriceText.text = "Buy: " + item.buyPrice;
-        sellPriceText.text = "Sell: " + item.sellPrice;
+        buyPriceText.text = "Buy: " + item.data.buyPrice;
+        sellPriceText.text = "Sell: " + item.data.sellPrice;
 
-        weightText.text = "Weight: " + item.weight;
-        rarityText.text = "Rarity: " + item.rarity.ToString();
+        weightText.text = "Weight: " + item.data.weight;
+        rarityText.text = "Rarity: " + item.data.rarity.ToString();
+
+        if (item.source == ItemSource.Shop)
+        {
+            buyButton.gameObject.SetActive(true);
+            sellButton.gameObject.SetActive(false);
+        }
+        else
+        {
+            buyButton.gameObject.SetActive(false);
+            sellButton.gameObject.SetActive(true);
+        }
     }
 
     private void OnCloseButtonClick()
@@ -65,7 +71,7 @@ public class ItemDescriptionView : MonoBehaviour
         if (currentItem == null)
             return;
 
-        shopController.BuyItem(currentItem, 1);
+        shopController.BuyItem(currentItem.data,1);
     }
 
     private void OnSellButtonClick()
@@ -73,6 +79,6 @@ public class ItemDescriptionView : MonoBehaviour
         if (currentItem == null)
             return;
 
-        shopController.SellItem(currentItem, 1);
+        shopController.SellItem(currentItem.data, 1);
     }
 }
