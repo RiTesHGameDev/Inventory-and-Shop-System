@@ -1067,6 +1067,7 @@ MonoBehaviour:
   inventoryView: {fileID: 586631860}
   shopView: {fileID: 605903809}
   itemDatabase: {fileID: 11400000, guid: 29a5e8d432629d54a8a5a7889c552fb7, type: 2}
+  gatherResource: {fileID: 1770172315}
 --- !u!4 &547573119
 Transform:
   m_ObjectHideFlags: 0
@@ -1580,8 +1581,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130, y: -166.95}
-  m_SizeDelta: {x: 140, y: -403.9}
+  m_AnchoredPosition: {x: 210, y: -167.5}
+  m_SizeDelta: {x: 300, y: -405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812031752
 MonoBehaviour:
@@ -3335,7 +3336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2114e586619b846a3806632b56b9b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GatherButton: {fileID: 1616110979}
+  gatherButton: {fileID: 1616110979}
+  gatherResourcePanel: {fileID: 1770172313}
 --- !u!114 &1770172316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3648,8 +3650,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 290, y: -166.95}
-  m_SizeDelta: {x: 140, y: -403.9}
+  m_AnchoredPosition: {x: 210, y: -167.5}
+  m_SizeDelta: {x: 300, y: -405}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1994279694
 MonoBehaviour:
