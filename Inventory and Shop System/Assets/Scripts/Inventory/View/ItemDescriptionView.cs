@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class ItemDescriptionView : MonoBehaviour
 {
     public GameObject descriptionPanel;
-
     public Image icon;
     public TMP_Text nameText;
     public TMP_Text infoText;
@@ -14,7 +13,11 @@ public class ItemDescriptionView : MonoBehaviour
     public TMP_Text rarityText;
 
     public Button closeButton;
+    public Button buyButton;
+    public Button sellButton;
 
+    private ItemData currentItem;
+    private ShopController shopController;
     private void Awake()
     {
         descriptionPanel.SetActive(false);
@@ -28,9 +31,18 @@ public class ItemDescriptionView : MonoBehaviour
     private void Start()
     {
         closeButton.onClick.AddListener(OnCloseButtonClick);
+        buyButton.onClick.AddListener(OnBuyButtonClick);
+        sellButton.onClick.AddListener(OnSellButtonClick);
+    }
+
+    public void Initialize(ShopController controller)
+    {
+        shopController = controller;
     }
     private void Show(ItemData item)
     {
+        currentItem = item;
+
         descriptionPanel.SetActive(true);
 
         icon.sprite = item.icon;
@@ -47,5 +59,20 @@ public class ItemDescriptionView : MonoBehaviour
     private void OnCloseButtonClick()
     {
         descriptionPanel.SetActive(false);
+    }
+    private void OnBuyButtonClick()
+    {
+        if (currentItem == null)
+            return;
+
+        shopController.BuyItem(currentItem, 1);
+    }
+
+    private void OnSellButtonClick()
+    {
+        if (currentItem == null)
+            return;
+
+        shopController.SellItem(currentItem, 1);
     }
 }

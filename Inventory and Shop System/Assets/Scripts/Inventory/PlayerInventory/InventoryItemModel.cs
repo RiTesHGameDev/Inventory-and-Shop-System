@@ -8,9 +8,4 @@ public class InventoryItemModel
         this.data = data;
         this.quantity = quantity;
     }
-
-    public float TotalWeight()
-    {
-        return data.weight * quantity; 
-    }
 }

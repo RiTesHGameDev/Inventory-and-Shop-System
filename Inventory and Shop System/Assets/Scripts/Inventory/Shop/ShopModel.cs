@@ -2,22 +2,10 @@ using System.Collections.Generic;
 
 public class ShopModel
 {
-    private ItemDataBase dataBase;
-
-    private List<InventoryItemModel> shopItems = new List<InventoryItemModel>();
-    public ShopModel(ItemDataBase data)
+    public List<InventoryItemModel> shopItems;
+    public ShopModel() 
     {
-        dataBase = data;
-
-        foreach (ItemData item in dataBase.GetItems())
-        {
-            CreateItem(item);
-        }
-    }
-    private void CreateItem(ItemData data)
-    {
-        InventoryItemModel itemModel = new InventoryItemModel(data, 1);
-        shopItems.Add(itemModel);
+        shopItems = new List<InventoryItemModel>();
     }
     public List<InventoryItemModel> GetShopItems()
     {

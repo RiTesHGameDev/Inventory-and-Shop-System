@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public ItemDataBase dataBase;
+    public ItemDatabase dataBase;
     public Transform gridParent;
     public GameObject itemSlotPrefab;
 

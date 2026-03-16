@@ -6,17 +6,12 @@ public class ShopView : MonoBehaviour
 
     public Transform gridParent;
     public GameObject itemSlotPrefab;
-
-    public ItemDataBase itemDataBase;
-
-    void Awake()
-    {
-        shopController = new ShopController(itemDataBase, this);
-    }
+    public ItemDescriptionView descriptionView;
 
     public void SetShopController(ShopController controller)
     {
         shopController = controller;
+        descriptionView.Initialize(controller);
     }
 
     public void RefreshShop()
