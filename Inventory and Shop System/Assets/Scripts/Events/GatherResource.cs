@@ -28,9 +28,9 @@ public class GatherResource : MonoBehaviour
     }
 
     private void Gather()
-    {
+    { 
         currencyService.Add(1000);
-        inventoryController.IncreaseCapacity(200);
+        inventoryController.IncreaseCapacity(2000);
 
         Debug.Log("Resources gathered!");
     }
